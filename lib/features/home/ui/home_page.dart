@@ -105,7 +105,7 @@ class HomePage extends StatelessWidget {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Container(
+                    SizedBox(
                       height: 25.h,
                       width: 100.w,
                       child: SafeArea(
@@ -156,51 +156,33 @@ class HomePage extends StatelessWidget {
             }),
           ),
           bottomNavigationBar: Container(
-            color: AppColors.primary,
+            color: AppColors.secondary,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 //home, contact, share
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.home_filled,
-                          color: Colors.white,
-                        )),
-                    Text('Home', style: TextStyle(color: Colors.white)),
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Get.to(() => const ContactPage());
-                        },
-                        icon: Icon(
-                          Icons.contact_page,
-                          color: Colors.white,
-                        )),
-                    Text('Contact', style: TextStyle(color: Colors.white)),
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Get.to(() => EPaperPage());
-                        },
-                        icon: Icon(
-                          MdiIcons.newspaper,
-                          color: Colors.white,
-                        )),
-                    Text('E-Paper', style: TextStyle(color: Colors.white)),
-                  ],
-                ),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.home_filled,
+                      color: Colors.white,
+                    )),
+                IconButton(
+                    onPressed: () {
+                      Get.to(() => const ContactPage());
+                    },
+                    icon: const Icon(
+                      Icons.contact_page,
+                      color: Colors.white,
+                    )),
+                IconButton(
+                    onPressed: () {
+                      Get.to(() => EPaperPage());
+                    },
+                    icon: const Icon(
+                      MdiIcons.newspaper,
+                      color: Colors.white,
+                    )),
               ],
             ),
           ),

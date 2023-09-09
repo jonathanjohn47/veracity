@@ -75,6 +75,8 @@ class ArticlesTab extends StatelessWidget {
                                                             fontWeight:
                                                                 FontWeight
                                                                     .bold),
+                                                        textAlign:
+                                                            TextAlign.start,
                                                       ),
                                                     ),
                                                     SizedBox(
@@ -150,90 +152,116 @@ class ArticlesTab extends StatelessWidget {
                                 : Stack(
                                     alignment: Alignment.topCenter,
                                     children: [
-                                      GestureDetector(
-                                        onTap: () {
-                                          Get.to(() => ArticleDetailsPage(
-                                                articleModel: allArticles[0],
-                                              ));
-                                        },
-                                        child: Stack(
-                                          children: <Widget>[
-                                            Image.network(
-                                              allArticles[0].headlineImageUrl,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            Positioned(
-                                              bottom: 16.sp,
-                                              child: Container(
-                                                height: 20.h,
-                                                width: 100.w,
-                                                decoration: BoxDecoration(
-                                                  gradient: LinearGradient(
-                                                    colors: [
-                                                      Colors.transparent,
-                                                      Colors.black
-                                                          .withOpacity(0.7)
-                                                    ],
-                                                    begin: Alignment.topCenter,
-                                                    end: Alignment.bottomCenter,
-                                                  ),
-                                                ),
-                                                child: Align(
-                                                  alignment:
-                                                      Alignment.bottomCenter,
-                                                  child: Padding(
-                                                    padding: EdgeInsets.all(8.sp),
-                                                    child: Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .stretch,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment.end,
-                                                      children: [
-                                                        Text(
-                                                          allArticles[0].title,
-                                                          style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 24,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            shadows: <Shadow>[
-                                                              Shadow(
-                                                                blurRadius: 3.0,
-                                                                color:
-                                                                    Colors.black,
-                                                                offset: Offset(
-                                                                    2.0, 2.0),
+                                      CarouselSlider(
+                                          items: [
+                                            ...allArticles
+                                                .sublist(0, 5)
+                                                .map((e) {
+                                              return GestureDetector(
+                                                onTap: () {
+                                                  Get.to(
+                                                      () => ArticleDetailsPage(
+                                                            articleModel: e,
+                                                          ));
+                                                },
+                                                child: Stack(
+                                                  children: <Widget>[
+                                                    Image.network(
+                                                      e.headlineImageUrl,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                    Positioned(
+                                                      bottom: 16.sp,
+                                                      child: Container(
+                                                        height: 20.h,
+                                                        width: 100.w,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          gradient:
+                                                              LinearGradient(
+                                                            colors: [
+                                                              Colors
+                                                                  .transparent,
+                                                              Colors.black
+                                                                  .withOpacity(
+                                                                      0.9)
+                                                            ],
+                                                            begin: Alignment
+                                                                .topCenter,
+                                                            end: Alignment
+                                                                .bottomCenter,
+                                                          ),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.sp),
+                                                          child: Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .stretch,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .end,
+                                                            children: [
+                                                              Text(
+                                                                e.title,
+                                                                style:
+                                                                    const TextStyle(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  fontSize: 24,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  shadows: <Shadow>[
+                                                                    Shadow(
+                                                                      blurRadius:
+                                                                          3.0,
+                                                                      color: Colors
+                                                                          .black,
+                                                                      offset: Offset(
+                                                                          2.0,
+                                                                          2.0),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .left,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 4.sp,
+                                                              ),
+                                                              Text(
+                                                                "Published: ${e.date.toDateWithShortMonthNameAndTime}",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .white
+                                                                        .withOpacity(
+                                                                            0.8),
+                                                                    fontStyle:
+                                                                        FontStyle
+                                                                            .italic,
+                                                                    fontSize:
+                                                                        10.sp),
                                                               ),
                                                             ],
                                                           ),
-                                                          textAlign:
-                                                              TextAlign.center,
                                                         ),
-                                                        SizedBox(
-                                                          height: 4.sp,
-                                                        ),
-                                                        Text(
-                                                          "Published: ${allArticles[0].date.toDateWithShortMonthNameAndTime}",
-                                                          style: TextStyle(
-                                                              color: Colors.white
-                                                                  .withOpacity(
-                                                                      0.8),
-                                                              fontStyle: FontStyle
-                                                                  .italic,
-                                                              fontSize: 10.sp),
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
-                                                  ),
+                                                  ],
                                                 ),
-                                              ),
-                                            ),
+                                              );
+                                            }).toList(),
                                           ],
-                                        ),
-                                      ),
+                                          options: CarouselOptions(
+                                              viewportFraction: 1,
+                                              height: 35.h,
+                                              enableInfiniteScroll: true)),
                                       Padding(
-                                        padding: EdgeInsets.only(top: 30.h),
+                                        padding: EdgeInsets.only(top: 31.h),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.only(
@@ -258,81 +286,69 @@ class ArticlesTab extends StatelessWidget {
                                                 right: 8.0.sp),
                                             child: ListView(
                                               children: [
-                                                CarouselSlider(
-                                                    items: allArticles
-                                                        .sublist(1, 5)
-                                                        .map((e) {
-                                                      return GestureDetector(
-                                                        onTap: () {
-                                                          Get.to(() =>
-                                                              ArticleDetailsPage(
-                                                                articleModel: e,
-                                                              ));
-                                                        },
-                                                        child: Padding(
-                                                          padding: EdgeInsets
-                                                              .symmetric(
-                                                                  horizontal:
-                                                                      12.0.sp),
-                                                          child: Column(
-                                                            children: [
-                                                              ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(4
-                                                                              .sp),
-                                                                  child: Image
-                                                                      .network(
-                                                                    e.headlineImageUrl,
-                                                                    fit: BoxFit
-                                                                        .cover,
-                                                                    width:
-                                                                        100.w,
-                                                                    height:
-                                                                        25.h,
-                                                                  )),
-                                                              SizedBox(
-                                                                height: 2.h,
-                                                              ),
-                                                              Expanded(
-                                                                child: Row(
-                                                                  children: [
-                                                                    Expanded(
-                                                                      child:
-                                                                          AutoSizeText(
-                                                                        e.title,
-                                                                        style: TextStyle(
-                                                                            fontSize:
-                                                                                14.sp,
-                                                                            fontWeight: FontWeight.bold),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              Divider(
-                                                                thickness:
-                                                                    0.5.sp,
-                                                                color: AppColors
-                                                                    .secondary
-                                                                    .shade50
-                                                                    .withOpacity(
-                                                                        0.5),
-                                                                indent: 8.w,
-                                                                endIndent: 8.w,
-                                                              )
-                                                            ],
-                                                          ),
+                                                GestureDetector(
+                                                  onTap: () {
+                                                    Get.to(() =>
+                                                        ArticleDetailsPage(
+                                                          articleModel:
+                                                              allArticles[5],
+                                                        ));
+                                                  },
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal:
+                                                                12.0.sp),
+                                                    child: Column(
+                                                      children: [
+                                                        ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4.sp),
+                                                            child:
+                                                                Image.network(
+                                                              allArticles[5]
+                                                                  .headlineImageUrl,
+                                                              fit: BoxFit.cover,
+                                                              width: 100.w,
+                                                              height: 25.h,
+                                                            )),
+                                                        SizedBox(
+                                                          height: 2.h,
                                                         ),
-                                                      );
-                                                    }).toList(),
-                                                    options: CarouselOptions(
-                                                      height: 40.h,
-                                                      autoPlay: true,
-                                                      viewportFraction: 1,
-                                                    )),
+                                                        Row(
+                                                          children: [
+                                                            Expanded(
+                                                              child:
+                                                                  AutoSizeText(
+                                                                allArticles[5]
+                                                                    .title,
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        14.sp,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                                Divider(
+                                                  thickness: 0.5.sp,
+                                                  color: AppColors
+                                                      .secondary.shade50
+                                                      .withOpacity(0.5),
+                                                  indent: 8.w,
+                                                  endIndent: 8.w,
+                                                ),
                                                 ...allArticles
-                                                    .sublist(5)
+                                                    .sublist(
+                                                        6, allArticles.length)
                                                     .map((e) {
                                                   return GestureDetector(
                                                     onTap: () {
@@ -342,7 +358,7 @@ class ArticlesTab extends StatelessWidget {
                                                             articleModel: e,
                                                           ));
                                                     },
-                                                    child: Wrap(
+                                                    child: Column(
                                                       children: [
                                                         Padding(
                                                           padding: EdgeInsets

@@ -1,9 +1,6 @@
 import 'dart:convert';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:veracity/core/app_constants.dart';
-import 'package:veracity/models/category_model.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../models/article_model.dart';
@@ -17,7 +14,7 @@ class ArticleTabGetController extends GetxController {
     String firebaseUrl =
         "https://himalayanexpress-6288a-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
-    final response = await http.get(Uri.parse(firebaseUrl + "/Articles.json"));
+    final response = await http.get(Uri.parse("$firebaseUrl/Articles.json"));
 
     if (response.statusCode == 200) {
       Map<String, dynamic> articles = jsonDecode(response.body);

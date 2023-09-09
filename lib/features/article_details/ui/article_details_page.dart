@@ -18,7 +18,7 @@ class ArticleDetailsPage extends StatelessWidget {
     if (articleModel.youtubeLink != null) {
       youtubePlayerController = YoutubePlayerController(
         initialVideoId: articleModel.youtubeLink!,
-        flags: YoutubePlayerFlags(
+        flags: const YoutubePlayerFlags(
           autoPlay: true,
           mute: false,
         ),

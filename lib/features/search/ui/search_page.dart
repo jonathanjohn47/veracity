@@ -1,6 +1,5 @@
 import 'package:veracity/core/app_colors.dart';
 import 'package:veracity/helpers/date_time_helpers.dart';
-import 'package:veracity/models/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
