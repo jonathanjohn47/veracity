@@ -244,9 +244,11 @@ class ArticlesTab extends StatelessWidget {
                                               ),
                                             ],
                                           ),
-                                          height: 70.h,
                                           child: Padding(
-                                            padding: EdgeInsets.all(8.0.sp),
+                                            padding: EdgeInsets.only(
+                                                top: 8.0.sp,
+                                                left: 8.0.sp,
+                                                right: 8.0.sp),
                                             child: ListView(
                                               children: [
                                                 CarouselSlider(
