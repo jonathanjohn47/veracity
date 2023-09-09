@@ -259,7 +259,10 @@ class ArticlesTab extends StatelessWidget {
                                           options: CarouselOptions(
                                               viewportFraction: 1,
                                               height: 35.h,
-                                              enableInfiniteScroll: true)),
+                                              enableInfiniteScroll: true,
+                                              autoPlay: true,
+                                              autoPlayInterval:
+                                                  Duration(seconds: 3))),
                                       Padding(
                                         padding: EdgeInsets.only(top: 31.h),
                                         child: Container(
