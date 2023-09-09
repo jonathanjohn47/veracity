@@ -150,80 +150,87 @@ class ArticlesTab extends StatelessWidget {
                                 : Stack(
                                     alignment: Alignment.topCenter,
                                     children: [
-                                      Stack(
-                                        children: <Widget>[
-                                          Image.network(
-                                            allArticles[0].headlineImageUrl,
-                                            fit: BoxFit.cover,
-                                          ),
-                                          Positioned(
-                                            bottom: 16.sp,
-                                            child: Container(
-                                              height: 20.h,
-                                              width: 100.w,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    Colors.transparent,
-                                                    Colors.black
-                                                        .withOpacity(0.7)
-                                                  ],
-                                                  begin: Alignment.topCenter,
-                                                  end: Alignment.bottomCenter,
-                                                ),
-                                              ),
-                                              child: Align(
-                                                alignment:
-                                                    Alignment.bottomCenter,
-                                                child: Padding(
-                                                  padding: EdgeInsets.all(8.sp),
-                                                  child: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .stretch,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.end,
-                                                    children: [
-                                                      Text(
-                                                        allArticles[0].title,
-                                                        style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 24,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          shadows: <Shadow>[
-                                                            Shadow(
-                                                              blurRadius: 3.0,
-                                                              color:
-                                                                  Colors.black,
-                                                              offset: Offset(
-                                                                  2.0, 2.0),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                      SizedBox(
-                                                        height: 4.sp,
-                                                      ),
-                                                      Text(
-                                                        "Published: ${allArticles[0].date.toDateWithShortMonthNameAndTime}",
-                                                        style: TextStyle(
-                                                            color: Colors.white
-                                                                .withOpacity(
-                                                                    0.8),
-                                                            fontStyle: FontStyle
-                                                                .italic,
-                                                            fontSize: 10.sp),
-                                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          Get.to(() => ArticleDetailsPage(
+                                                articleModel: allArticles[0],
+                                              ));
+                                        },
+                                        child: Stack(
+                                          children: <Widget>[
+                                            Image.network(
+                                              allArticles[0].headlineImageUrl,
+                                              fit: BoxFit.cover,
+                                            ),
+                                            Positioned(
+                                              bottom: 16.sp,
+                                              child: Container(
+                                                height: 20.h,
+                                                width: 100.w,
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Colors.transparent,
+                                                      Colors.black
+                                                          .withOpacity(0.7)
                                                     ],
+                                                    begin: Alignment.topCenter,
+                                                    end: Alignment.bottomCenter,
+                                                  ),
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      Alignment.bottomCenter,
+                                                  child: Padding(
+                                                    padding: EdgeInsets.all(8.sp),
+                                                    child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .stretch,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Text(
+                                                          allArticles[0].title,
+                                                          style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontSize: 24,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            shadows: <Shadow>[
+                                                              Shadow(
+                                                                blurRadius: 3.0,
+                                                                color:
+                                                                    Colors.black,
+                                                                offset: Offset(
+                                                                    2.0, 2.0),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                        ),
+                                                        SizedBox(
+                                                          height: 4.sp,
+                                                        ),
+                                                        Text(
+                                                          "Published: ${allArticles[0].date.toDateWithShortMonthNameAndTime}",
+                                                          style: TextStyle(
+                                                              color: Colors.white
+                                                                  .withOpacity(
+                                                                      0.8),
+                                                              fontStyle: FontStyle
+                                                                  .italic,
+                                                              fontSize: 10.sp),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(top: 30.h),
