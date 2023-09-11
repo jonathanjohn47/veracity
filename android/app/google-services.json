@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "738338485011",
+    "firebase_url": "https://veracity-42ed5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "veracity-42ed5",
+    "storage_bucket": "veracity-42ed5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738338485011:android:fb6ef10ea1982da8ab20e6",
+        "android_client_info": {
+          "package_name": "com.app.veracity.veracity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9zwfPDcHOQeacf3HEUAGNBRTZuR3qsws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

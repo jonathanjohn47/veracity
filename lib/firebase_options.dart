@@ -50,20 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDLeHrH_eWtKLRDU7v7Fnxji2RmbtFIEyE',
-    appId: '1:1025967779190:android:1f9ae95615201e11f75e57',
-    messagingSenderId: '1025967779190',
-    projectId: 'himalayanexpress-6288a',
-    storageBucket: 'himalayanexpress-6288a.appspot.com',
+    apiKey: 'AIzaSyD9zwfPDcHOQeacf3HEUAGNBRTZuR3qsws',
+    appId: '1:738338485011:android:fb6ef10ea1982da8ab20e6',
+    messagingSenderId: '738338485011',
+    projectId: 'veracity-42ed5',
+    storageBucket: 'veracity-42ed5.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDzo_FaPU149Hh65vAKJA_Gdl9WoUEGnGk',
-    appId: '1:1025967779190:ios:419858ea4e30b752f75e57',
-    messagingSenderId: '1025967779190',
-    projectId: 'himalayanexpress-6288a',
-    storageBucket: 'himalayanexpress-6288a.appspot.com',
-    iosClientId: '1025967779190-vvb5ns72kda8eebhee51f4httnhk553l.apps.googleusercontent.com',
-    iosBundleId: 'com.app.himalayanExpress',
+    apiKey: 'AIzaSyCt0LJ4I1B7bK2wdhJwQXaZKgP22sbZAr4',
+    appId: '1:738338485011:ios:417e29ddc07530a4ab20e6',
+    messagingSenderId: '738338485011',
+    projectId: 'veracity-42ed5',
+    storageBucket: 'veracity-42ed5.appspot.com',
+    iosBundleId: 'com.app.veracity.veracity',
   );
 }
