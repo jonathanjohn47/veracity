@@ -35,10 +35,13 @@ class ArticleDetailsPage extends StatelessWidget {
             floating: true,
             automaticallyImplyLeading: false,
             expandedHeight: 30.h,
-            flexibleSpace: articleModel.youtubeLink != null
-                ? YoutubePlayer(
-                    controller: youtubePlayerController,
-                  )
+            flexibleSpace: articleModel.headlineImageUrl.isEmpty
+                ? articleModel.youtubeLink == null
+                    ? Image.asset(
+                        'assets/images/Daily-Veracity-News-300x100-1.png')
+                    : YoutubePlayer(
+                        controller: youtubePlayerController,
+                      )
                 : Image.network(articleModel.headlineImageUrl),
           ),
           SliverToBoxAdapter(
