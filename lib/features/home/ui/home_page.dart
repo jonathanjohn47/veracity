@@ -65,9 +65,9 @@ class HomePage extends StatelessWidget {
                   )
                 : Column(
                     children: [
-                      /*Obx(() {
+                      Obx(() {
                         return Container(
-                          color: AppColors.secondary,
+                          color: AppColors.primary,
                           child: TabBar(
                             controller: getController.tabController,
                             isScrollable: true,
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                             indicatorColor: Colors.white,
                           ),
                         );
-                      }),*/
+                      }),
                       Expanded(
                         child: Obx(() {
                           return TabBarView(

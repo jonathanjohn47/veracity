@@ -22,31 +22,33 @@ class ArticleTabGetController extends GetxController {
       articles.forEach((key, value) {
         ArticlesFromRtdb temp = ArticlesFromRtdb.fromJson(value);
 
-        List<String> receivedCategories = temp.category;
+        if (temp.content.isNotEmpty) {
+          List<String> receivedCategories = temp.category;
 
-        HomePageGetController homePageGetController = Get.find();
-        bool containsCategory = receivedCategories.contains(categoryName);
+          HomePageGetController homePageGetController = Get.find();
+          bool containsCategory = receivedCategories.contains(categoryName);
 
-        if (containsCategory) {
-          articlesList.add(ArticleModel(
-            id: key,
-            title: temp.title,
-            description: "",
-            htmlText: temp.content,
-            date: DateTime.fromMillisecondsSinceEpoch(temp.timestamp),
-            headlineImageUrl: temp.thumbnailImageUrl,
-            youtubeLink: "",
-            category: homePageGetController.categories[
-                homePageGetController.categories.indexWhere((element) {
-              return element.name == categoryName;
-            })],
-            publisher: PublisherModel(
-                name: temp.publisherName,
-                email: "email",
-                password: "password",
-                profilePicLink: "",
-                dateCreated: ""),
-          ));
+          if (containsCategory) {
+            articlesList.add(ArticleModel(
+              id: temp.url,
+              title: temp.title,
+              description: "",
+              htmlText: temp.content,
+              date: DateTime.fromMillisecondsSinceEpoch(temp.timestamp),
+              headlineImageUrl: temp.thumbnailImageUrl,
+              youtubeLink: "",
+              category: homePageGetController.categories[
+                  homePageGetController.categories.indexWhere((element) {
+                return element.name == categoryName;
+              })],
+              publisher: PublisherModel(
+                  name: temp.publisherName,
+                  email: "email",
+                  password: "password",
+                  profilePicLink: "",
+                  dateCreated: ""),
+            ));
+          }
         }
       });
     } else {

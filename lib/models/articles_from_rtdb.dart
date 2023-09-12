@@ -50,7 +50,7 @@ class ArticlesFromRtdb {
     category: List<String>.from(json["category"].map((x) => x)),
     content: json["content"],
     publisherName: json["publisher_name"],
-    thumbnailImageUrl: json["thumbnail_image_url"],
+    thumbnailImageUrl: json["thumbnail_image_url"] == false? "": json["thumbnail_image_url"],
     timestamp: json["timestamp"],
     title: json["title"],
     url: json["url"],
