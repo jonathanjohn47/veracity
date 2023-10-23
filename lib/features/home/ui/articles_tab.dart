@@ -164,25 +164,27 @@ class ArticlesTab extends StatelessWidget {
                                           mainAxisAlignment:
                                           MainAxisAlignment.end,
                                           children: [
-                                            Text(
-                                              e.title,
-                                              style: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 24,
-                                                fontWeight:
-                                                FontWeight.bold,
-                                                shadows: <Shadow>[
-                                                  Shadow(
-                                                    blurRadius: 3.0,
-                                                    color:
-                                                    Colors.black,
-                                                    offset: Offset(
-                                                        2.0, 2.0),
-                                                  ),
-                                                ],
+                                            Expanded(
+                                              child: Text(
+                                                e.title,
+                                                style: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 24,
+                                                  fontWeight:
+                                                  FontWeight.bold,
+                                                  shadows: <Shadow>[
+                                                    Shadow(
+                                                      blurRadius: 3.0,
+                                                      color:
+                                                      Colors.black,
+                                                      offset: Offset(
+                                                          2.0, 2.0),
+                                                    ),
+                                                  ],
+                                                ),
+                                                textAlign:
+                                                TextAlign.left,
                                               ),
-                                              textAlign:
-                                              TextAlign.left,
                                             ),
                                             SizedBox(
                                               height: 4.sp,
