@@ -115,7 +115,7 @@ class SearchPage extends StatelessWidget {
                                                                         4.sp),
                                                             child:
                                                                 Image.network(
-                                                              e.headlineImageUrl,
+                                                              e.thumbnailImageUrl,
                                                               fit: BoxFit.cover,
                                                               width: 20.w,
                                                               height: 20.w,
@@ -130,7 +130,7 @@ class SearchPage extends StatelessWidget {
                                                     child: Row(
                                                       children: [
                                                         Text(
-                                                          "Published: ${e.date.toDateWithShortMonthNameAndTime}",
+                                                          "Published: ${DateTime.fromMillisecondsSinceEpoch(e.timestamp * 1000).toDateWithShortMonthNameAndTime}",
                                                           style: TextStyle(
                                                               color:
                                                                   Colors.grey,

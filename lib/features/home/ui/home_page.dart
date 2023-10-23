@@ -127,9 +127,7 @@ class HomePage extends StatelessWidget {
                                 element.name,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    color: element.requiresRegistration
-                                        ? Colors.grey
-                                        : Colors.black),
+                                    color:  Colors.black),
                               ),
                               onTap: () {
                                 getController.selectedIndex.value =
