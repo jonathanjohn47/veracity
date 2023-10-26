@@ -87,7 +87,7 @@ class ArticlesTab extends StatelessWidget {
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 16.sp),
                                     child: Text(
-                                      e.publisherName.name,
+                                      e.publisherName,
                                       style: TextStyle(
                                           color: Colors.grey, fontSize: 10.sp),
                                     ),
