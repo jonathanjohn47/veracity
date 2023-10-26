@@ -32,7 +32,7 @@ class ContactPage extends StatelessWidget {
                       TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp),
                 ),
                 Text(
-                  'John Doe',
+                  'Abhay Kumar Mahajan',
                   style:
                       TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp),
                 ),
@@ -49,41 +49,7 @@ class ContactPage extends StatelessWidget {
                       TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp),
                 ),
                 Text(
-                  'Grievance Redressal Officer',
-                  style:
-                      TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp),
-                ),
-              ]),
-              TableRow(children: [
-                Text(
-                  'Address',
-                  style:
-                      TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp),
-                ),
-                Text(
-                  ':',
-                  style:
-                      TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp),
-                ),
-                Text(
-                  '10 Downing Street',
-                  style:
-                      TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp),
-                ),
-              ]),
-              TableRow(children: [
-                Text(
-                  'Phone Number',
-                  style:
-                      TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp),
-                ),
-                Text(
-                  ':',
-                  style:
-                      TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp),
-                ),
-                SelectableText(
-                  '+91 98765 43210',
+                  'Editor-in-Chief',
                   style:
                       TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp),
                 ),
@@ -100,7 +66,7 @@ class ContactPage extends StatelessWidget {
                       TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp),
                 ),
                 SelectableText(
-                  'johndoe@gmail.com',
+                  'editor@dailyveracitynews.com',
                   style:
                       TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp),
                 ),
@@ -118,10 +84,10 @@ class ContactPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    launchUrl(Uri.parse('www.cdaglobalnews.com'));
+                    launchUrl(Uri.parse('https://dailyveracitynews.com'));
                   },
                   child: Text(
-                    'www.cdaglobalnews.com',
+                    'https://dailyveracitynews.com',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 12.sp,
